@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "ConsoleMatrix.h"
 
 ConsoleMatrix::ConsoleMatrix(int cols, int padding) : cols(cols), padding(padding)

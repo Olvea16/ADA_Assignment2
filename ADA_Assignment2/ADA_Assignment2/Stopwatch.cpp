@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "Stopwatch.h"
 
 #define log1000(x) std::log2(x)/std::log2(1000)

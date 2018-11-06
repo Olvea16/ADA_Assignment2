@@ -1,0 +1,4 @@
+﻿  Quickselect.cpp
+c:\users\olive\code\gitrepositories\ada_assignment2.git\ada_assignment2\ada_assignment2\quickselect.cpp(33): warning C4018: '<': signed/unsigned mismatch
+c:\users\olive\code\gitrepositories\ada_assignment2.git\ada_assignment2\ada_assignment2\quickselect.cpp(34): warning C4018: '>': signed/unsigned mismatch
+  ADA_Assignment2.vcxproj -> C:\Users\olive\Code\GitRepositories\ADA_Assignment2.git\ADA_Assignment2\Debug\ADA_Assignment2.exe
