@@ -24,10 +24,13 @@
     <ClCompile Include="Stopwatch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Quickselect.cpp">
+    <ClCompile Include="priority_queue.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PriorityQueueSelect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Quickselect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -38,13 +41,16 @@
     <ClInclude Include="Stopwatch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Quickselect.h">
+    <ClInclude Include="priority_queue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Defs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PriorityQueueSelect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Defs.h">
+    <ClInclude Include="Quickselect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
