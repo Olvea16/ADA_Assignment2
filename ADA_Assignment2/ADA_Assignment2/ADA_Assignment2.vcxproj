@@ -115,7 +115,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ConsoleMatrix.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Stopwatch.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ConsoleMatrix.h" />
+    <ClInclude Include="Stopwatch.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
