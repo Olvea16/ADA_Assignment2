@@ -6,7 +6,13 @@ Created on Tue Nov  6 16:12:31 2018
 """
 import matplotlib.pyplot as plt
 import json
-file = input("File path to JSON: ")
+import tkinter as tk
+from tkinter.filedialog import askopenfilename
+root = tk.Tk()
+root.withdraw()
+
+file = askopenfilename(title = "JSON file")
+
 with open(file) as f:
     data = json.load(f)
 
