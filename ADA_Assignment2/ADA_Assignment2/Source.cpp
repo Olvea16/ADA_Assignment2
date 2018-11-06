@@ -1,7 +1,6 @@
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
-
 #include "priority_queue.h"
 
 
@@ -39,7 +38,7 @@ void priority_queue_test() {
 }
 
 int main() {
-	
+	priority_queue_test();
 	system("pause");
 	return 0;
 }
