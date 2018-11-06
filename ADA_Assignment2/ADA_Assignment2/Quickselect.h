@@ -1,4 +1,5 @@
 #pragma once
+#include "Defs.h"
 
 #include <vector>
 
@@ -13,7 +14,7 @@ public:
 	Quickselect();
 	~Quickselect();
 
-	static double select(std::vector<double> arr, int k, QSTimeComplexityStats& stats);
-	static void partition(std::vector<double>& arr, unsigned int& pivot, unsigned int left, unsigned int right, QSTimeComplexityStats& stats);
+	static double select(std::vector<arrayType> arr, int k, QSTimeComplexityStats& stats);
+	static void partition(std::vector<arrayType>& arr, unsigned int& pivot, unsigned int left, unsigned int right, QSTimeComplexityStats& stats);
 };
 

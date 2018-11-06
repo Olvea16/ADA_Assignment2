@@ -1,6 +1,6 @@
 #include "Quickselect.h"
 
-void swap(std::vector<double>& vec, unsigned int a, unsigned int b, QSTimeComplexityStats& stats) {
+void swap(std::vector<arrayType>& vec, unsigned int a, unsigned int b, QSTimeComplexityStats& stats) {
 	double temp = vec[a];
 	vec[a] = vec[b];
 	vec[b] = temp;
@@ -16,11 +16,11 @@ Quickselect::~Quickselect()
 {
 }
 
-double Quickselect::select(std::vector<double> arr, int k, QSTimeComplexityStats& stats)
+double Quickselect::select(std::vector<arrayType> arr, int k, QSTimeComplexityStats& stats)
 {
-	double result = 0;
+	arrayType result = 0;
 	k--;
-	unsigned int left = 0, right = arr.size() - 1, pivot = right;
+	unsigned int left = 0, right = arr.size() - 1, pivot;
 	while (true) {
 		if (left == right) return arr[left];
 
@@ -37,9 +37,9 @@ double Quickselect::select(std::vector<double> arr, int k, QSTimeComplexityStats
 	return result;
 }
 
-void Quickselect::partition(std::vector<double>& arr, unsigned int& pivot, unsigned int left, unsigned int right, QSTimeComplexityStats & stats)
+void Quickselect::partition(std::vector<arrayType>& arr, unsigned int& pivot, unsigned int left, unsigned int right, QSTimeComplexityStats & stats)
 {
-	double value = arr[pivot];
+	arrayType value = arr[pivot];
 	swap(arr, pivot, right, stats);
 	pivot = left;
 

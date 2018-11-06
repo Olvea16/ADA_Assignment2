@@ -1,5 +1,6 @@
 #pragma once
 #include "Defs.h"
+#include "priority_queue.h"
 
 #include <vector>
 
@@ -13,8 +14,6 @@ public:
 	PriorityQueueSelect();
 	~PriorityQueueSelect();
 
-	arrayType select(std::vector<arrayType> arr, unsigned int k);
-
-	static double 
+	static arrayType select(std::vector<arrayType> arr, unsigned int k, PQSTimeComplexityStats& stats);
 };
 

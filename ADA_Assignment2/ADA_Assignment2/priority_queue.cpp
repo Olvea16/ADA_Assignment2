@@ -3,7 +3,7 @@
 
 priority_queue::priority_queue(bool lessthanIn, int init_length)
 {
-	array = new int[init_length];
+	array = new arrayType[init_length];
 	array_length = init_length;
 	currentSize = 0;
 	lessthan = lessthanIn;
@@ -14,7 +14,7 @@ priority_queue::~priority_queue()
 	delete[] array;
 }
 
-void priority_queue::push(int value)
+void priority_queue::push(arrayType value)
 {
 	if (currentSize == array_length - 1) enlargeArray(array_length * 2 + 1);
 
@@ -43,14 +43,14 @@ bool priority_queue::empty()
 	return currentSize == 0;
 }
 
-int priority_queue::top()
+arrayType priority_queue::top()
 {
 	return array[1];
 }
 
 void priority_queue::enlargeArray(int length)
 {
-	int *temp = new int[length];
+	arrayType *temp = new arrayType[length];
 
 	for (size_t i = 0; i < array_length; i++)
 	{
@@ -79,7 +79,7 @@ void priority_queue::percolateDown(int hole)
 	array[hole] = tmp;
 }
 
-bool priority_queue::compere(int a, int b)
+bool priority_queue::compere(arrayType a, arrayType b)
 {
 	if (lessthan) return a < b;
 	else return a > b;
