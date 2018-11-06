@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 #include "priority_queue.h"
-
-
+#include "Json.h"
+#include <math.h>
 
 using namespace std;
 
@@ -38,7 +38,14 @@ void priority_queue_test() {
 }
 
 int main() {
-	priority_queue_test();
+	vector<float> vecx, vecy;
+	for (float i = 0; i < 10; i += 0.1)
+	{
+		vecx.push_back(i);
+		vecy.push_back(cos(i));
+	}
+	makeJOSNPlotData("Test Plot", "n", "Time [ns]", vecx, vecy);
+
 	system("pause");
 	return 0;
 }

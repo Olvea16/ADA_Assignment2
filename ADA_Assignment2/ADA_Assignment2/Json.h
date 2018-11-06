@@ -4,17 +4,21 @@
 #include <fstream>
 
 using namespace std;
+
+void makeJOSNPlotData(string titel, string xlabel, string ylabel, vector<float> xdata, vector<float> ydata);
+
 class Json
 {
 public:
 	Json();
 	~Json();
 	void add(string name, string value);
+	void add(string name, vector<float> value);
 	void write(string filename);
 	string to_string();
 
 protected:
-
+	
 	struct jsonValue
 	{
 		string name;
@@ -25,7 +29,7 @@ protected:
 			value = valuein;
 		}
 	};
-
+	void addJsonValue(jsonValue val);
 	vector<jsonValue> valuse;
 };
 
