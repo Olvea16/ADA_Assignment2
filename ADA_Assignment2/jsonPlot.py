@@ -17,7 +17,7 @@ with open(file) as f:
     data = json.load(f)
 
 plt.figure()
-plt.plot(data["xdata"], data["ydata"])
+exec("plt."+data["plotType"]+"""(data["xdata"], data["ydata"])""")
 plt.xlabel(data["xlabel"])
 plt.ylabel(data["ylabel"])
 plt.title(data["titel"])

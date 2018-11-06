@@ -62,10 +62,11 @@ void Json::addJsonValue(jsonValue val)
 	valuse.push_back(val);
 }
 
-void makeJOSNPlotData(string titel, string xlabel, string ylabel, vector<float> xdata, vector<float> ydata)
+void makeJOSNPlotData(string titel, string xlabel, string ylabel, vector<float> xdata, vector<float> ydata, string plotType)
 {
 	Json j;
 
+	j.add("plotType", plotType);
 	j.add("titel", titel);
 	j.add("xlabel", xlabel);
 	j.add("ylabel", ylabel);

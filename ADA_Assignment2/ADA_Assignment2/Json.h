@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void makeJOSNPlotData(string titel, string xlabel, string ylabel, vector<float> xdata, vector<float> ydata);
+void makeJOSNPlotData(string titel, string xlabel, string ylabel, vector<float> xdata, vector<float> ydata, string plotType = "plot");
 
 class Json
 {

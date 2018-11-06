@@ -44,7 +44,7 @@ int main() {
 		vecx.push_back(i);
 		vecy.push_back(cos(i));
 	}
-	makeJOSNPlotData("Test Plot", "n", "Time [ns]", vecx, vecy);
+	makeJOSNPlotData("Test Plot", "n", "Time [ns]", vecx, vecy,"triplot");
 
 	system("pause");
 	return 0;
