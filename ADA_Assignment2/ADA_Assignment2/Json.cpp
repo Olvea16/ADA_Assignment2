@@ -16,8 +16,14 @@ void Json::add(string name, string value)
 	jsonValue val(name, '"'+value+'"');
 	addJsonValue(val);
 }
-
-void Json::add(string name, vector<float> value)
+template<typename T>
+void Json::add(string name, T value)
+{
+	jsonValue val(name, std::to_string(value));
+	addJsonValue(val);
+}
+template<typename T>
+void Json::add(string name, vector<T> value)
 {
 	string valueString = "[ ";
 
@@ -25,6 +31,18 @@ void Json::add(string name, vector<float> value)
 		valueString += std::to_string(value.at(i)) + ", ";
 	}
 	valueString += std::to_string(value.back()) + " ]";
+
+	jsonValue val(name, valueString);
+	addJsonValue(val);
+}
+void Json::add(string name, vector<string> value)
+{
+	string valueString = "[ ";
+
+	for (int i = 0; i < value.size() - 1; i++) {
+		valueString += '"' + value.at(i) + '"' + ", ";
+	}
+	valueString += '"' + value.back() + '"' + " ]";
 
 	jsonValue val(name, valueString);
 	addJsonValue(val);

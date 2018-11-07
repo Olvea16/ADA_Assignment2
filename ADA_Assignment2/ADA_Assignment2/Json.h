@@ -12,8 +12,14 @@ class Json
 public:
 	Json();
 	~Json();
+
 	void add(string name, string value);
-	void add(string name, vector<float> value);
+	template<typename T>
+	void add(string name, T value);
+	template<typename T>
+	void add(string name, vector<T> value);
+	void add(string name, vector<string> value);
+
 	void write(string filename);
 	string to_string();
 
