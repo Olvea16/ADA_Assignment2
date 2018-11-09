@@ -1,2 +1,3 @@
-﻿  Quickselect.cpp
+﻿  Source.cpp
+c:\users\olive\code\gitrepositories\ada_assignment2.git\ada_assignment2\ada_assignment2\source.cpp(72): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   ADA_Assignment2.vcxproj -> C:\Users\olive\Code\GitRepositories\ADA_Assignment2.git\ADA_Assignment2\Debug\ADA_Assignment2.exe

@@ -1,3 +1,3 @@
 #pragma once
 
-typedef double arrayType;
+typedef int arrayType;

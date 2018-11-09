@@ -2,7 +2,7 @@
 #include "Defs.h"
 
 #include <vector>
-
+#include <algorithm>
 
 struct QSTimeComplexityStats {
 	int nPointerIncrementations = 0, nSwaps = 0;
@@ -14,7 +14,7 @@ public:
 	Quickselect();
 	~Quickselect();
 
-	static double select(std::vector<arrayType> arr, int k, QSTimeComplexityStats& stats);
+	static double select(std::vector<arrayType> arr, int k, QSTimeComplexityStats& stats, bool oldVersion = false);
 	static void partition(std::vector<arrayType>& arr, int& pivot, unsigned int left, unsigned int right, QSTimeComplexityStats& stats);
 };
 

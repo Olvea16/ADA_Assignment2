@@ -5,7 +5,7 @@
 #include <vector>
 
 struct PQSTimeComplexityStats {
-	unsigned int nArrayAccesses, nComparisons;
+	unsigned int nArrayAccesses = 0, nComparisons = 0;
 };
 
 class PriorityQueueSelect
