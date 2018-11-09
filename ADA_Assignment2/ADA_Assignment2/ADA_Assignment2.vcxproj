@@ -117,6 +117,7 @@
   <ItemGroup>
     <ClCompile Include="ConsoleMatrix.cpp" />
     <ClCompile Include="Json.cpp" />
+    <ClCompile Include="JSONPlot.cpp" />
     <ClCompile Include="PriorityQueueSelect.cpp" />
     <ClCompile Include="priority_queue.cpp" />
     <ClCompile Include="Quickselect.cpp" />
@@ -127,6 +128,7 @@
     <ClInclude Include="ConsoleMatrix.h" />
     <ClInclude Include="Defs.h" />
     <ClInclude Include="Json.h" />
+    <ClInclude Include="JSONPlot.h" />
     <ClInclude Include="PriorityQueueSelect.h" />
     <ClInclude Include="priority_queue.h" />
     <ClInclude Include="Quickselect.h" />

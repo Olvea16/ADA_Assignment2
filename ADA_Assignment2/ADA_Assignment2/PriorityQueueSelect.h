@@ -11,6 +11,6 @@ public:
 	PriorityQueueSelect();
 	~PriorityQueueSelect();
 
-	static arrayType select(std::vector<arrayType> arr, unsigned int k, PQSTimeComplexityStats& stats);
+	static arrayType select(std::vector<arrayType> arr, unsigned int k, PQSTimeComplexityStats& stats, unsigned long int statSize = 1000);
 };
 

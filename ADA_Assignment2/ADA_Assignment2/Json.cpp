@@ -16,14 +16,7 @@ void Json::add(string name, string value)
 	jsonValue val(name, '"'+value+'"');
 	addJsonValue(val);
 }
-template<typename T>
-void Json::add(string name, T value)
-{
-	jsonValue val(name, std::to_string(value));
-	addJsonValue(val);
-}
-template<typename T>
-void Json::add(string name, vector<T> value)
+void Json::add(string name, vector<float> value)
 {
 	string valueString = "[ ";
 

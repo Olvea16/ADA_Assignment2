@@ -25,6 +25,7 @@ double Quickselect::select(std::vector<arrayType> arr, int k, QSTimeComplexitySt
 			if (left == right) return arr[left];
 
 			pivot = left + (right - left) / 2;
+			stats.nPointerIncrementations++;
 
 			if (arr[left] < arr[pivot]) {
 				if (arr[left] < arr[right]) {
@@ -34,6 +35,7 @@ double Quickselect::select(std::vector<arrayType> arr, int k, QSTimeComplexitySt
 			}
 			else if (arr[left] < arr[right]) pivot = left;
 			else pivot = right;
+			stats.nPointerIncrementations++;
 
 			partition(arr, pivot, left, right, stats);
 
@@ -43,6 +45,7 @@ double Quickselect::select(std::vector<arrayType> arr, int k, QSTimeComplexitySt
 			}
 			else if (pivot < k)  left = pivot + 1;
 			else if (pivot > k)  right = pivot - 1;
+			stats.nPointerIncrementations++;
 		}
 	}
 	else {
@@ -51,8 +54,14 @@ double Quickselect::select(std::vector<arrayType> arr, int k, QSTimeComplexitySt
 			partition(arr, pivot, l, r, stats);
 			if (pivot == k) return arr[k];
 
-			if (pivot > k) r = pivot - 1;
-			else l = pivot + 1;
+			if (pivot > k) {
+				r = pivot - 1; 
+				stats.nPointerIncrementations++;
+			}
+			else {
+				l = pivot + 1;
+				stats.nPointerIncrementations++;
+			}
 			return select(std::vector<arrayType>(arr.begin() + l, arr.begin() + r + 1), k - l, stats, oldVersion);
 		}
 		else return INT_MAX;
@@ -65,11 +74,13 @@ void Quickselect::partition(std::vector<arrayType>& arr, int& pivot, unsigned in
 {
 	arrayType value = arr[right];
 	pivot = left;
+	stats.nPointerIncrementations++;
 
 	for (unsigned int i = left; i < right; i++) {
 		if (arr[i] < value) {
 			swap(arr, pivot, i, stats);
 			pivot++;
+			stats.nPointerIncrementations++;
 		}
 	}
 	swap(arr, right, pivot, stats);

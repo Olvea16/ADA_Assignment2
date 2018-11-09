@@ -16,10 +16,10 @@ priority_queue::~priority_queue()
 
 void priority_queue::push(arrayType value, PQSTimeComplexityStats& stats)
 {
-	if (currentSize == array_length - 1) enlargeArray(array_length * 2 + 1);
+	if (currentSize == array_length - 1) enlargeArray(array_length * 2 + 1, stats);
 
 	int hole = ++currentSize;
-	for ( ; hole > 1 && compare(value, array[hole/2]); hole /= 2)
+	for ( ; hole > 1 && compare(value, array[hole/2], stats); hole /= 2)
 	{
 		array[hole] = array[hole / 2];
 		stats.nArrayAccesses++;
@@ -33,7 +33,7 @@ void priority_queue::pop(PQSTimeComplexityStats& stats)
 	if (not currentSize) return;
 	array[1] = array[currentSize--];
 	stats.nArrayAccesses++;
-	percolateDown(1);
+	percolateDown(1, stats);
 }
 
 int priority_queue::size(PQSTimeComplexityStats& stats)
@@ -78,8 +78,8 @@ void priority_queue::percolateDown(int hole, PQSTimeComplexityStats& stats)
 	for (; hole *2 <= currentSize; hole = child)
 	{
 		child = hole * 2;
-		if (child != currentSize and compare(array[child + 1], array[child])) child++;
-		if (compare(array[child], tmp)) array[hole] = array[child];
+		if (child != currentSize and compare(array[child + 1], array[child], stats)) child++;
+		if (compare(array[child], tmp, stats)) array[hole] = array[child];
 		else break;
 	}
 	array[hole] = tmp;

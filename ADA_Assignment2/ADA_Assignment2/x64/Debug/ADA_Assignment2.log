@@ -1,0 +1,28 @@
+﻿  Source.cpp
+c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(74): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(192): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(240): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(241): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(242): warning C4244: 'argument': conversion from 'unsigned int' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(243): warning C4244: 'argument': conversion from 'unsigned int' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+  ADA_Assignment2.vcxproj -> C:\Users\SimonLBS\OneDrive - Syddansk Universitet\Studie\5 semester\Algoritmer og datastrukturer\Programmer\ADA_Assignment2\ADA_Assignment2\x64\Debug\ADA_Assignment2.exe
