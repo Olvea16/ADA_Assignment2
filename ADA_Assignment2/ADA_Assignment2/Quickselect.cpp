@@ -20,11 +20,21 @@ double Quickselect::select(std::vector<arrayType> arr, int k, QSTimeComplexitySt
 {
 	arrayType result = 0;
 	k--;
-	unsigned int left = 0, right = arr.size() - 1, pivot;
+	int left = 0, right = arr.size() - 1, pivot;
 	while (true) {
 		if (left == right) return arr[left];
 
-		pivot = left + rand() % (right - left - 1) + 1;
+		pivot = left + (right - left) / 2;
+
+		if (arr[left] < arr[pivot]) {
+			if (arr[left] < arr[right]) {
+				if (arr[right] < arr[pivot]) pivot = right;
+			}
+			else if (arr[right] < arr[pivot]) pivot = right;
+		}
+		else if (arr[left] < arr[right]) pivot = left;
+		else pivot = right;
+		
 		partition(arr, pivot, left, right, stats);
 
 		if (pivot == k) {
@@ -37,7 +47,7 @@ double Quickselect::select(std::vector<arrayType> arr, int k, QSTimeComplexitySt
 	return result;
 }
 
-void Quickselect::partition(std::vector<arrayType>& arr, unsigned int& pivot, unsigned int left, unsigned int right, QSTimeComplexityStats & stats)
+void Quickselect::partition(std::vector<arrayType>& arr, int& pivot, unsigned int left, unsigned int right, QSTimeComplexityStats & stats)
 {
 	arrayType value = arr[pivot];
 	swap(arr, pivot, right, stats);

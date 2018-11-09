@@ -1,10 +1,2 @@
-﻿  PriorityQueueSelect.cpp
-  Source.cpp
-c:\users\olive\code\gitrepositories\ada_assignment2.git\ada_assignment2\ada_assignment2\source.cpp(16): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\olive\code\gitrepositories\ada_assignment2.git\ada_assignment2\ada_assignment2\source.cpp(23): warning C4244: 'initializing': conversion from 'arrayType' to 'int', possible loss of data
-c:\users\olive\code\gitrepositories\ada_assignment2.git\ada_assignment2\ada_assignment2\source.cpp(27): warning C4244: 'initializing': conversion from 'arrayType' to 'int', possible loss of data
-  priority_queue.cpp
-c:\users\olive\code\gitrepositories\ada_assignment2.git\ada_assignment2\ada_assignment2\priority_queue.cpp(55): warning C4018: '<': signed/unsigned mismatch
-c:\users\olive\code\gitrepositories\ada_assignment2.git\ada_assignment2\ada_assignment2\priority_queue.cpp(70): warning C4244: 'initializing': conversion from 'arrayType' to 'int', possible loss of data
-  Generating Code...
+﻿  Quickselect.cpp
   ADA_Assignment2.vcxproj -> C:\Users\olive\Code\GitRepositories\ADA_Assignment2.git\ADA_Assignment2\Debug\ADA_Assignment2.exe
