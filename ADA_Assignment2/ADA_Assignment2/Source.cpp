@@ -185,10 +185,10 @@ int main() {
 	std::vector<float> ydata_qstats_nSwaps;
 	std::vector<float> ydata_pqstats_nArrayAccesses;
 	std::vector<float> ydata_pqstats_nComparisons;
-
-	for (int N = 10; N < 10000; N+=100)
+	int maxN = 100000;
+	for (int N = 10; N < maxN; N+=100)
 	{
-		std::cout << N << endl;
+		std::cout << N << " -- " << (N / float(maxN))*100 << "%" << endl;
 		xdata.push_back(N);
 		std::vector<arrayType> vec(N);
 		for (int i = 0; i < N; i++) vec[i] = (N - i);
