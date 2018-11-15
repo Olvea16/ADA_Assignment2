@@ -81,8 +81,10 @@ void priority_queue::percolateDown(int hole, PQSTimeComplexityStats& stats)
 		if (child != currentSize and compare(array[child + 1], array[child], stats)) child++;
 		if (compare(array[child], tmp, stats)) array[hole] = array[child];
 		else break;
+		stats.nArrayAccesses++;
 	}
 	array[hole] = tmp;
+	stats.nArrayAccesses++;
 }
 
 bool priority_queue::compare(arrayType a, arrayType b, PQSTimeComplexityStats& stats)

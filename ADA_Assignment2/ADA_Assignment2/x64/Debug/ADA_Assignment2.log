@@ -1,26 +1,27 @@
 ﻿  Source.cpp
-c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(74): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(192): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
+c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(75): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(206): warning C4244: '*=': conversion from 'double' to 'int', possible loss of data
+c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(214): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
           with
           [
               _Ty=float
           ]
-c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(240): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
+c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(242): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
           with
           [
               _Ty=float
           ]
-c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(241): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
+c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(243): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
           with
           [
               _Ty=float
           ]
-c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(242): warning C4244: 'argument': conversion from 'unsigned int' to 'const _Ty', possible loss of data
+c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(244): warning C4244: 'argument': conversion from 'unsigned int' to 'const _Ty', possible loss of data
           with
           [
               _Ty=float
           ]
-c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(243): warning C4244: 'argument': conversion from 'unsigned int' to 'const _Ty', possible loss of data
+c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(245): warning C4244: 'argument': conversion from 'unsigned int' to 'const _Ty', possible loss of data
           with
           [
               _Ty=float

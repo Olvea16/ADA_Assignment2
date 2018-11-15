@@ -6,6 +6,7 @@
 #include "PriorityQueueSelect.h"
 #include "Json.h"
 #include <math.h>
+#include <random>
 
 #include "Stopwatch.h"
 #include "ConsoleMatrix.h"
@@ -165,6 +166,19 @@ void quickSelect(vector<Comparable> & a, int left, int right, int k)
 		insertionSort(a.begin() + left, a.begin() + right);
 }
 
+std::vector<float> getAvg(std::vector <std::vector<float>> vec) {
+	std::vector<float> sum;
+	for (size_t i = 0; i < vec.size(); i++) {
+		sum.push_back(0.0);
+		for (size_t j = 0; j < vec.at(i).size(); j++)
+		{
+			sum.at(i) += vec.at(i).at(j);
+		}
+		sum.at(i) /= vec.at(i).size();
+	}
+	return sum;
+}
+
 int main() {
 	Stopwatch sw;
 	std::string swName;
@@ -181,73 +195,65 @@ int main() {
 	*/
 	std::vector<float> xdata;
 
-	std::vector<float> ydata_qstats_nPointerIncrementations;
-	std::vector<float> ydata_qstats_nSwaps;
-	std::vector<float> ydata_pqstats_nArrayAccesses;
-	std::vector<float> ydata_pqstats_nComparisons;
+	std::vector <std::vector<float>> ydata_qstats_nPointerIncrementations;
+	std::vector <std::vector<float>> ydata_qstats_nSwaps;
+	std::vector <std::vector<float>> ydata_pqstats_nArrayAccesses;
+	std::vector <std::vector<float>> ydata_pqstats_nComparisons;
 	int maxN = 100000;
-	for (int N = 10; N < maxN; N+=100)
+	int k = 9;
+
+	std::vector<int> ns;
+	for (int N = 10; N < maxN; N *= sqrt(10))
 	{
-		std::cout << N << " -- " << (N / float(maxN))*100 << "%" << endl;
-		xdata.push_back(N);
-		std::vector<arrayType> vec(N);
-		for (int i = 0; i < N; i++) vec[i] = (N - i);
-		random_shuffle(vec.begin(), vec.end());
-
-		QSTimeComplexityStats qstats;
-		PQSTimeComplexityStats pqstats;
-
-		int k = 9;
-
-		//cM.addRow({ "N:", to_string(N) });
-		//cM.addRow({ "k:", to_string(k) });
-		//cM.addRow({ "Method:","Found Value:","Time Taken:" });
-
-		//swName = "Quickselect (old)";
-		//sw.start(swName);
-		//double oqsVal = Quickselect::select(vec, k, qstats, true);
-		//sw.stop(swName);
-		//cM.addRow({ swName, to_string(oqsVal), sw.getString(swName) });
-
-		//swName = "Quickselect (new)";
-		//sw.start(swName);
-		double nqsVal = Quickselect::select(vec, k - 1, qstats);
-		//sw.stop(swName);
-		//cM.addRow({ swName, to_string(nqsVal), sw.getString(swName) });
-
-		//swName = "Quickselect (interwebz)";
-		//sw.start(swName);
-		//double netProgramming = kthSmallest(vec, 0, vec.size() - 1, N - k);
-		//sw.stop(swName);
-		//cM.addRow({ swName, to_string(netProgramming), sw.getString(swName) });
-
-		//swName = "Quickselect (book)";
-		//std::vector<arrayType> vec2 = vec;
-		//sw.start(swName);
-		//quickSelect(vec2, 0, vec2.size() - 1, k);
-		//double bookProgramming = vec2[k - 1];
-		//sw.stop(swName);
-		//cM.addRow({ swName, to_string(bookProgramming), sw.getString(swName) });
-
-		//swName = "Queueselect";
-		//sw.start(swName);
-		double pqsVal = PriorityQueueSelect::select(vec, k, pqstats);
-		//sw.stop(swName);
-		//cM.addRow({ swName, to_string(pqsVal), sw.getString(swName) });
-
-		//cM.print();
-
-		ydata_qstats_nPointerIncrementations.push_back(qstats.nPointerIncrementations);
-		ydata_qstats_nSwaps.push_back(qstats.nSwaps);
-		ydata_pqstats_nArrayAccesses.push_back(pqstats.nArrayAccesses);
-		ydata_pqstats_nComparisons.push_back(pqstats.nComparisons);
+		ns.push_back(N);
 	}
 
+	for (int i = 0; i < ns.size(); i++)//
+	{
+		int N = ns.at(i);
+		xdata.push_back(N);
+		ydata_qstats_nPointerIncrementations.push_back(std::vector<float>());
+		ydata_qstats_nSwaps.push_back(std::vector<float>());
+		ydata_pqstats_nArrayAccesses.push_back(std::vector<float>());
+		ydata_pqstats_nComparisons.push_back(std::vector<float>());
+
+		std::cout << N << " -- " << ((i + 1.0) / ns.size()) * 100 << "%" << endl;
+
+		std::vector<arrayType> vec(N);
+		for (int g = 0; g < N; g++) vec[g] = (N - g);
+		
+		int nK = 100;
+		for (int j = 0; j < nK; j++)
+		{
+			
+			k = 1 + randomInt(N - 2);
+			std::cout << '\t' << k << " -- " << ((j) / float(nK)) * 100 << "%" << endl;
+
+			random_shuffle(vec.begin(), vec.end());
+
+			QSTimeComplexityStats qstats;
+			PQSTimeComplexityStats pqstats;
+
+			double nqsVal = Quickselect::select(vec, k - 1, qstats);
+
+			double pqsVal = PriorityQueueSelect::select(vec, k, pqstats);
+
+
+			ydata_qstats_nPointerIncrementations.back().push_back(qstats.nPointerIncrementations);
+			ydata_qstats_nSwaps.back().push_back(qstats.nSwaps);
+			ydata_pqstats_nArrayAccesses.back().push_back(pqstats.nArrayAccesses);
+			ydata_pqstats_nComparisons.back().push_back(pqstats.nComparisons);
+		}
+	}
+
+
+
+
 	JSONPlot jp("Complexity","N","times");
-	jp.addData("qstats_nPointerIncrementations", xdata, ydata_qstats_nPointerIncrementations);
-	jp.addData("qstats_nSwaps", xdata, ydata_qstats_nSwaps);
-	jp.addData("pqstats_nArrayAccesses", xdata, ydata_pqstats_nArrayAccesses);
-	jp.addData("pqstats_nComparisons", xdata, ydata_pqstats_nComparisons);
+	jp.addData("qstats_nPointerIncrementations", xdata, getAvg(ydata_qstats_nPointerIncrementations));
+	jp.addData("qstats_nSwaps", xdata, getAvg(ydata_qstats_nSwaps));
+	jp.addData("pqstats_nArrayAccesses", xdata, getAvg(ydata_pqstats_nArrayAccesses));
+	jp.addData("pqstats_nComparisons", xdata, getAvg(ydata_pqstats_nComparisons));
 	jp.write();
 
 	std::system("pause");
