@@ -8,12 +8,17 @@ Quickselect::~Quickselect()
 {
 }
 
+double Quickselect::select(std::vector<arrayType> arr, int k, QSTimeComplexityStats & stats)
+{
+	return _select(arr,k-1,stats);
+}
+
 void swap(std::vector<arrayType>& vec, unsigned int a, unsigned int b, QSTimeComplexityStats& stats) {
 	stats.nSwaps++;
 	std::iter_swap(vec.begin() + a, vec.begin() + b);
 }
 
-double Quickselect::select(std::vector<arrayType> arr, int k, QSTimeComplexityStats& stats)
+double Quickselect::_select(std::vector<arrayType> arr, int k, QSTimeComplexityStats& stats)
 {
 	int l = 0, r = arr.size() - 1, pivot;
 	if (k >= 0 && k < arr.size()) {
@@ -28,7 +33,7 @@ double Quickselect::select(std::vector<arrayType> arr, int k, QSTimeComplexitySt
 			l = pivot + 1;
 			stats.nPointerIncrementations++;
 		}
-		return select(std::vector<arrayType>(arr.begin() + l, arr.begin() + r + 1), k - l, stats);
+		return _select(std::vector<arrayType>(arr.begin() + l, arr.begin() + r + 1), k - l, stats);
 	}
 	else return INT_MAX;
 	

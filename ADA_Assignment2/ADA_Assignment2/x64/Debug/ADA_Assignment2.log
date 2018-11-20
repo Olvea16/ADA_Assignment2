@@ -1,28 +1,31 @@
 ﻿  Source.cpp
 c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(57): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(103): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
+c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(99): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
           with
           [
               _Ty=float
           ]
-c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(131): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
+c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(127): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
           with
           [
               _Ty=float
           ]
-c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(132): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
+c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(128): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
           with
           [
               _Ty=float
           ]
-c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(133): warning C4244: 'argument': conversion from 'unsigned int' to 'const _Ty', possible loss of data
+c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(129): warning C4244: 'argument': conversion from 'unsigned int' to 'const _Ty', possible loss of data
           with
           [
               _Ty=float
           ]
-c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(134): warning C4244: 'argument': conversion from 'unsigned int' to 'const _Ty', possible loss of data
+c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(130): warning C4244: 'argument': conversion from 'unsigned int' to 'const _Ty', possible loss of data
           with
           [
               _Ty=float
           ]
+c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(162): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(180): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(196): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   ADA_Assignment2.vcxproj -> C:\Users\SimonLBS\OneDrive - Syddansk Universitet\Studie\5 semester\Algoritmer og datastrukturer\Programmer\ADA_Assignment2\ADA_Assignment2\x64\Debug\ADA_Assignment2.exe

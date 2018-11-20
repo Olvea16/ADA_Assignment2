@@ -20,7 +20,7 @@ int randomInt(int maxVal = 100) {
 }
 
 
-std::vector<float> getAvg(std::vector <std::vector<float>> vec) {
+std::vector<float> getAvg(std::vector<std::vector<float>> &vec) {
 	std::vector<float> sum;
 	for (size_t i = 0; i < vec.size(); i++) {
 		sum.push_back(0.0);
@@ -68,18 +68,27 @@ std::string getProcessbar(int n, int maxn, int len = 10) {
 	return bar;
 }
 
-int main() {
+struct testData
+{
 	std::vector<float> xdata;
+	std::vector<float> ydata_qstats_nPointerIncrementations;
+	std::vector<float> ydata_qstats_nSwaps;
+	std::vector<float> ydata_pqstats_nArrayAccesses;
+	std::vector<float> ydata_pqstats_nComparisons;
+};
 
-	std::vector <std::vector<float>> ydata_qstats_nPointerIncrementations;
-	std::vector <std::vector<float>> ydata_qstats_nSwaps;
-	std::vector <std::vector<float>> ydata_pqstats_nArrayAccesses;
-	std::vector <std::vector<float>> ydata_pqstats_nComparisons;
-	int maxN = 10000;
+testData runComplextiTest(int startN, int endN, int increment, int nK = 100, std::string prefix = "") {
+	testData data;
+
+	std::vector<std::vector<float>> ydata_qstats_nPointerIncrementations;
+	std::vector<std::vector<float>> ydata_qstats_nSwaps;
+	std::vector<std::vector<float>> ydata_pqstats_nArrayAccesses;
+	std::vector<std::vector<float>> ydata_pqstats_nComparisons;
+
 	int k = 9;
 
 	std::vector<int> ns;
-	for (int N = 10; N < maxN; N += 100)
+	for (int N = startN; N < endN; N += increment)
 	{
 		ns.push_back(N);
 	}
@@ -87,22 +96,22 @@ int main() {
 	for (int i = 0; i < ns.size(); i++)//
 	{
 		int N = ns.at(i);
-		xdata.push_back(N);
+		data.xdata.push_back(N);
 		ydata_qstats_nPointerIncrementations.push_back(std::vector<float>());
 		ydata_qstats_nSwaps.push_back(std::vector<float>());
 		ydata_pqstats_nArrayAccesses.push_back(std::vector<float>());
 		ydata_pqstats_nComparisons.push_back(std::vector<float>());
 
-		system("cls");
-		std::cout << getProcessbar(N, maxN, 20) << std::endl;
+		//system("cls");
+		std::cout << prefix << getProcessbar(N, ns.back(), 20) << '\r';
 
 		std::vector<arrayType> vec(N);
 		for (int g = 0; g < N; g++) vec[g] = (N - g);
+
 		
-		int nK = 100;
 		for (int j = 0; j < nK; j++)
 		{
-			
+
 			k = 1 + randomInt(N - 2);
 
 			random_shuffle(vec.begin(), vec.end());
@@ -122,13 +131,81 @@ int main() {
 		}
 	}
 
-	JSONPlot jp("Complexity","N","times");
-	jp.addData("qstats_nPointerIncrementations", xdata, getAvg(ydata_qstats_nPointerIncrementations));
-	jp.addData("qstats_nSwaps", xdata, getAvg(ydata_qstats_nSwaps));
-	jp.addData("pqstats_nArrayAccesses", xdata, getAvg(ydata_pqstats_nArrayAccesses));
-	jp.addData("pqstats_nComparisons", xdata, getAvg(ydata_pqstats_nComparisons));
-	jp.write();
+	data.ydata_qstats_nPointerIncrementations = getAvg(ydata_qstats_nPointerIncrementations);
+	data.ydata_qstats_nSwaps = getAvg(ydata_qstats_nSwaps);
+	data.ydata_pqstats_nArrayAccesses = getAvg(ydata_pqstats_nArrayAccesses);
+	data.ydata_pqstats_nComparisons = getAvg(ydata_pqstats_nComparisons);
 
+	return data;
+}
+
+void writeTestDataJSON(testData &data) {
+	JSONPlot jp("Complexity", "N", "times");
+	jp.addData("qstats_nPointerIncrementations", data.xdata, data.ydata_qstats_nPointerIncrementations);
+	jp.addData("qstats_nSwaps", data.xdata, data.ydata_qstats_nSwaps);
+	jp.addData("pqstats_nArrayAccesses", data.xdata, data.ydata_pqstats_nArrayAccesses);
+	jp.addData("pqstats_nComparisons", data.xdata, data.ydata_pqstats_nComparisons);
+	jp.write();
+}
+
+std::string vecToS(std::vector<int> &vec) {
+	std::string res = "[ ";
+	for (size_t i = 0; i < vec.size()-1; i++)
+	{
+		res += std::to_string(vec.at(i)) + ", ";
+	}
+	res += std::to_string(vec.back()) + " ]";
+	return res;
+}
+
+int main() {
+	srand(time(NULL));
+	ConsoleMatrix cm(2);
+
+	std::vector<int> vec;
+	int maxn = 40;
+	for (int i = 0; i < maxn; i++)
+	{
+		vec.push_back(i);
+	}
+	random_shuffle(vec.begin(), vec.end());
+	vec.erase(vec.begin() + maxn / 2, vec.end());
+	
+	std::cout << "The array: " << vecToS(vec) << ". Has numbers from 0 to " << maxn-1 << std::endl;
+
+	int k = rand()%vec.size();
+	
+	QSTimeComplexityStats qstats;
+	PQSTimeComplexityStats pqstats;
+	int nqsVal = Quickselect::select(vec, k, qstats);
+	int pqsVal = PriorityQueueSelect::select(vec, k, pqstats);
+	cm.addRow({ "k is:", std::to_string(k) });
+	cm.addRow({"Quickselect found:", std::to_string(nqsVal)});
+	cm.addRow({ "PriorityQueueSelect found:", std::to_string(pqsVal) });
+	cm.print();
+
+
+	
+	testData data = runComplextiTest(10, 2000, 450, 100, "Running small complexity test ");
+	std::cout << std::endl;
+	std::cout << "Note that the values are averages of 100 repetitions with a random k-value." << std::endl;
+
+	int dataPoints = 5;
+	for (size_t i = 0; i < dataPoints; i++)
+	{
+		int index = i * (data.xdata.size() - 1) / (dataPoints - 1);
+		ConsoleMatrix cm2(3);
+		cm2.addRow({ "n is:", std::to_string(data.xdata.at(index)) , ""});
+		cm2.addRow({"Quickselect :", "Pointer incrementations", "Swaps"});
+		cm2.addRow({ "", std::to_string(data.ydata_qstats_nPointerIncrementations.at(index)), std::to_string(data.ydata_qstats_nSwaps.at(index))});
+		cm2.addRow({ "PriorityQueueSelect :", "Array accesses", "Comparisons" });
+		cm2.addRow({ "", std::to_string(data.ydata_pqstats_nArrayAccesses.at(index)), std::to_string(data.ydata_pqstats_nComparisons.at(index)) });
+		cm2.print();
+		std::cout << std::endl;
+	}
+
+	std::cout << "We strongly recommend looking at the complexity graph in the PDF" << std::endl << "for a better understanding of the complexity measurements." << std::endl;
+	 
 	std::system("pause");
 	return 0;
 }
