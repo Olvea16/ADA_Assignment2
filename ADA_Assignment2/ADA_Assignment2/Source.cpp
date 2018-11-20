@@ -203,7 +203,7 @@ int main() {
 	int k = 9;
 
 	std::vector<int> ns;
-	for (int N = 10; N < maxN; N *= sqrt(10))
+	for (int N = 10; N < maxN; N += 100)
 	{
 		ns.push_back(N);
 	}

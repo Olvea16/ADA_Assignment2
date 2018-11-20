@@ -1,29 +1,23 @@
-﻿  Source.cpp
-c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(75): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(206): warning C4244: '*=': conversion from 'double' to 'int', possible loss of data
-c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(214): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
-          with
-          [
-              _Ty=float
-          ]
-c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(242): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
-          with
-          [
-              _Ty=float
-          ]
-c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(243): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
-          with
-          [
-              _Ty=float
-          ]
-c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(244): warning C4244: 'argument': conversion from 'unsigned int' to 'const _Ty', possible loss of data
-          with
-          [
-              _Ty=float
-          ]
-c:\users\simonlbs\onedrive - syddansk universitet\studie\5 semester\algoritmer og datastrukturer\programmer\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(245): warning C4244: 'argument': conversion from 'unsigned int' to 'const _Ty', possible loss of data
-          with
-          [
-              _Ty=float
-          ]
-  ADA_Assignment2.vcxproj -> C:\Users\SimonLBS\OneDrive - Syddansk Universitet\Studie\5 semester\Algoritmer og datastrukturer\Programmer\ADA_Assignment2\ADA_Assignment2\x64\Debug\ADA_Assignment2.exe
+﻿  ConsoleMatrix.cpp
+c:\users\oliver\code\repos\ada_assignment2\ada_assignment2\ada_assignment2\consolematrix.cpp(14): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  Json.cpp
+  JSONPlot.cpp
+  PriorityQueueSelect.cpp
+  priority_queue.cpp
+  Quickselect.cpp
+c:\users\oliver\code\repos\ada_assignment2\ada_assignment2\ada_assignment2\quickselect.cpp(23): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\oliver\code\repos\ada_assignment2\ada_assignment2\ada_assignment2\quickselect.cpp(52): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Source.cpp
+c:\users\oliver\code\repos\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(75): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\oliver\code\repos\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(214): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+c:\users\oliver\code\repos\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(242): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+c:\users\oliver\code\repos\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(243): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+c:\users\oliver\code\repos\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(244): warning C4244: 'argument': conversion from 'unsigned int' to 'const float', possible loss of data
+c:\users\oliver\code\repos\ada_assignment2\ada_assignment2\ada_assignment2\source.cpp(245): warning C4244: 'argument': conversion from 'unsigned int' to 'const float', possible loss of data
+  Stopwatch.cpp
+c:\users\oliver\code\repos\ada_assignment2\ada_assignment2\ada_assignment2\stopwatch.cpp(25): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\users\oliver\code\repos\ada_assignment2\ada_assignment2\ada_assignment2\stopwatch.cpp(44): warning C4244: 'initializing': conversion from '__int64' to 'double', possible loss of data
+c:\users\oliver\code\repos\ada_assignment2\ada_assignment2\ada_assignment2\stopwatch.cpp(57): warning C4244: 'initializing': conversion from 'double' to '::size_t', possible loss of data
+  Generating Code...
+c:\users\oliver\code\repos\ada_assignment2\ada_assignment2\ada_assignment2\stopwatch.cpp(47): warning C4715: 'Stopwatch::getTime': not all control paths return a value
+  ADA_Assignment2.vcxproj -> C:\Users\Oliver\Code\repos\ADA_Assignment2\ADA_Assignment2\x64\Debug\ADA_Assignment2.exe

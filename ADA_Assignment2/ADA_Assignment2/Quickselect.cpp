@@ -82,6 +82,7 @@ void Quickselect::partition(std::vector<arrayType>& arr, int& pivot, unsigned in
 			pivot++;
 			stats.nPointerIncrementations++;
 		}
+		stats.nPointerIncrementations++;
 	}
 	swap(arr, right, pivot, stats);
 }
