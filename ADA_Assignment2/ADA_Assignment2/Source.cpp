@@ -8,7 +8,6 @@
 #include <math.h>
 #include <random>
 
-#include "Stopwatch.h"
 #include "ConsoleMatrix.h"
 #include "JSONPlot.h"
 
