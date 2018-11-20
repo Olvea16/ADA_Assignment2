@@ -14,7 +14,7 @@ public:
 	Quickselect();
 	~Quickselect();
 
-	static double select(std::vector<arrayType> arr, int k, QSTimeComplexityStats& stats, bool oldVersion = false);
+	static double select(std::vector<arrayType> arr, int k, QSTimeComplexityStats& stats);
 	static void partition(std::vector<arrayType>& arr, int& pivot, unsigned int left, unsigned int right, QSTimeComplexityStats& stats);
 };
 
